@@ -22,6 +22,7 @@ export const ExperienceContainer = styled.div`
   }
   .list-experience {
     font-family: "Poppins", serif;
+    margin-bottom: 160px;
     li {
       border-radius: 15px;
       background: #2c1250;

@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from "react";
+import { CanvasTechContainer } from "./styled";
+import OrbitCanvas from "../OrbitAnimation";
 
 const CanvasCurvedLinesWithFix: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -15,7 +17,7 @@ const CanvasCurvedLinesWithFix: React.FC = () => {
     const height = (canvas.height = window.innerHeight);
 
     const startX = width / 2;
-    const startY = height - 100;
+    const startY = height;
 
     const allIcons = [
       { name: "figma", img: "/assets/images/experience/figma.png" },
@@ -39,7 +41,7 @@ const CanvasCurvedLinesWithFix: React.FC = () => {
       imagesRef.current[icon.name] = img;
     });
 
-    const spacing = 90;
+    const spacing = 110;
     const offset = spacing / 2;
 
     const bottomIcons = allIcons.slice(0, 6);
@@ -67,6 +69,21 @@ const CanvasCurvedLinesWithFix: React.FC = () => {
     let animationProgress = 0;
     let step = 1;
 
+    const drawGradientLine = (
+      ctx: CanvasRenderingContext2D,
+      startX: number,
+      startY: number,
+      endX: number,
+      endY: number
+    ) => {
+      const gradient = ctx.createLinearGradient(startX, startY, endX, endY);
+      gradient.addColorStop(0, "rgba(61, 23, 104, 0)"); // Màu #3D1768 (100% opacity)
+      gradient.addColorStop(1, "rgba(61, 23, 104, 1)"); // Màu #3D1768 (0% opacity)
+
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = 2;
+    };
+
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
 
@@ -92,7 +109,7 @@ const CanvasCurvedLinesWithFix: React.FC = () => {
             ctx.moveTo(startX, startY);
             const currentX = startX + (icon.x - startX) * icon.progress;
             const currentY = startY + (icon.y - startY) * icon.progress;
-            ctx.strokeStyle = "rgba(255, 255, 255, 0.5)";
+            drawGradientLine(ctx, startX, startY, currentX, currentY);
             ctx.lineWidth = 2;
             ctx.quadraticCurveTo(cp1X, cp1Y, currentX, currentY);
             ctx.stroke();
@@ -147,8 +164,9 @@ const CanvasCurvedLinesWithFix: React.FC = () => {
               bottomIcon.x + (icon.x - bottomIcon.x) * icon.progress;
             const currentY =
               bottomIcon.y + (icon.y - bottomIcon.y) * icon.progress;
-            ctx.strokeStyle = "rgba(255, 255, 255, 0.5)";
-            ctx.lineWidth = 2;
+            // ctx.strokeStyle = "rgba(255, 255, 255, 0.5)";
+            // ctx.lineWidth = 2;
+            drawGradientLine(ctx, startX, startY, currentX, currentY);
             ctx.quadraticCurveTo(cp1X, cp1Y, currentX, currentY);
             ctx.stroke();
           });
@@ -196,7 +214,29 @@ const CanvasCurvedLinesWithFix: React.FC = () => {
     return () => window.removeEventListener("resize", draw);
   }, []);
 
-  return <canvas ref={canvasRef} className="w-full h-full" />;
+  return (
+    <CanvasTechContainer>
+      <h2 className="text-[24px] mb-[0]">
+        I'm currently looking to join a{" "}
+        <span className="text-[#A362FF]">cross-functional</span> team
+      </h2>
+      <p className="text-[17px] mb-[-200px]">
+        that values improving people's lives through accessible design{" "}
+      </p>
+      <canvas ref={canvasRef} className="w-full tech" />
+      <div className="logo-root">
+        <img
+          src="/assets/images/experience/icon_root.png"
+          width={180}
+          height={180}
+          loading="lazy"
+          alt="Root"
+          className="logo-root"
+        />
+      </div>
+      <OrbitCanvas />
+    </CanvasTechContainer>
+  );
 };
 
 export default CanvasCurvedLinesWithFix;
