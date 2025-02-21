@@ -64,7 +64,6 @@ const Experience = () => {
             </li>
           ))}
         </ul>
-        <CanvasAnimation />
       </div>
     </ExperienceContainer>
   );

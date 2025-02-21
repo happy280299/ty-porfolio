@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { CanvasTechContainer } from "./styled";
 import OrbitCanvas from "../OrbitAnimation";
+import BoxAnimation from "../BoxAnimation/BoxAnimation";
 
 const CanvasCurvedLinesWithFix: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -223,8 +224,8 @@ const CanvasCurvedLinesWithFix: React.FC = () => {
       <p className="text-[17px] mb-[-200px]">
         that values improving people's lives through accessible design{" "}
       </p>
-      <canvas ref={canvasRef} className="w-full tech" />
-      <div className="logo-root">
+      {/* <canvas ref={canvasRef} className="w-full tech" /> */}
+      {/* <div className="logo-root">
         <img
           src="/assets/images/experience/icon_root.png"
           width={180}
@@ -233,8 +234,8 @@ const CanvasCurvedLinesWithFix: React.FC = () => {
           alt="Root"
           className="logo-root"
         />
-      </div>
-      <OrbitCanvas />
+      </div> */}
+      {/* <OrbitCanvas /> */}
     </CanvasTechContainer>
   );
 };
