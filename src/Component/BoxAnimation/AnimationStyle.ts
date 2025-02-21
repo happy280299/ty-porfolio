@@ -5,6 +5,7 @@ export const WapperAnimation = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+  pointer-events: none;
 `;
 export const ContainerAnimation = styled.div`
   width: 100%;
@@ -43,21 +44,21 @@ export const Orbit1 = styled.div`
   position: absolute;
   border-radius: 50%;
   transform-style: preserve-3d;
-  transform: translateZ(-250px) translateY(-25%) translateX(12.5%) rotateX(20deg)
-  rotateZ(-90deg);
+  transform: translateZ(-250px) translateY(-25%) translateX(12.5%)
+    rotateX(20deg) rotateZ(-90deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0.5px solid #763CAC50;
-  animation: RotateHome1 10s linear infinite ;
+  border: 0.5px solid #763cac50;
+  animation: RotateHome1 10s linear infinite;
   @keyframes RotateHome1 {
     0% {
-      transform: translateZ(-250px) translateY(-25%) translateX(12.5%) rotateX(20deg)
-    rotateZ(-90deg);
+      transform: translateZ(-250px) translateY(-25%) translateX(12.5%)
+        rotateX(20deg) rotateZ(-90deg);
     }
     100% {
-      transform: translateZ(-250px) translateY(-25%) translateX(12.5%) rotateX(20deg)
-    rotateZ(-450deg);
+      transform: translateZ(-250px) translateY(-25%) translateX(12.5%)
+        rotateX(20deg) rotateZ(-450deg);
     }
   }
 `;
@@ -67,19 +68,22 @@ export const Orbit2 = styled.div`
   position: absolute;
   border-radius: 50%;
   transform-style: preserve-3d;
-  transform: translateZ(-239px) translateY(-25%) translateX(8.5%) rotateX(22deg) rotateZ(-90deg);
+  transform: translateZ(-239px) translateY(-25%) translateX(8.5%) rotateX(22deg)
+    rotateZ(-90deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0.1px solid #763CAC50;
-  animation: RotateHome2 10s linear infinite ;
+  border: 0.1px solid #763cac50;
+  animation: RotateHome2 10s linear infinite;
   animation-delay: -2s;
   @keyframes RotateHome2 {
     0% {
-      transform: translateZ(-239px) translateY(-25%) translateX(8.5%) rotateX(22deg) rotateZ(-90deg);
+      transform: translateZ(-239px) translateY(-25%) translateX(8.5%)
+        rotateX(22deg) rotateZ(-90deg);
     }
     100% {
-      transform: translateZ(-239px) translateY(-25%) translateX(8.5%) rotateX(22deg) rotateZ(-450deg);
+      transform: translateZ(-239px) translateY(-25%) translateX(8.5%)
+        rotateX(22deg) rotateZ(-450deg);
     }
   }
 `;
@@ -90,19 +94,22 @@ export const Orbit3 = styled.div`
   position: absolute;
   border-radius: 50%;
   transform-style: preserve-3d;
-  transform: translateZ(-234px) translateY(-25%) translateX(5.5%) rotateX(24.4deg) rotateZ(-90deg);
+  transform: translateZ(-234px) translateY(-25%) translateX(5.5%)
+    rotateX(24.4deg) rotateZ(-90deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0.1px solid #763CAC50;
-  animation: RotateHome3 10s linear infinite ;
+  border: 0.1px solid #763cac50;
+  animation: RotateHome3 10s linear infinite;
   animation-delay: -4s;
   @keyframes RotateHome3 {
     0% {
-      transform: translateZ(-234px) translateY(-25%) translateX(5.5%) rotateX(24.4deg) rotateZ(-90deg);
+      transform: translateZ(-234px) translateY(-25%) translateX(5.5%)
+        rotateX(24.4deg) rotateZ(-90deg);
     }
     100% {
-      transform: translateZ(-234px) translateY(-25%) translateX(5.5%) rotateX(24.4deg) rotateZ(-450deg);
+      transform: translateZ(-234px) translateY(-25%) translateX(5.5%)
+        rotateX(24.4deg) rotateZ(-450deg);
     }
   }
 `;

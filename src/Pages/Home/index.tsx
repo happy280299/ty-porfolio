@@ -5,6 +5,7 @@ import Keyvisual from "./Keyvisual";
 import Experience from "./experience";
 import CanvasAnimation from "../../Component/CanvasTech";
 import BoxAnimation from "../../Component/BoxAnimation/BoxAnimation";
+import Project from "./Project";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
           <Keyvisual />
           <Experience />
           <BoxAnimation />
+          <Project />
         </HomeWrapper>
       </HomeContainer>
     </>

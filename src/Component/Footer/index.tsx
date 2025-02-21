@@ -23,10 +23,10 @@ const Footer = () => {
   ];
   return (
     <FooterContainer className="pb-[200px]">
-      <div className="wrapper max-w-[703px] mx-auto">
+      <div className="wrapper max-w-[1167px] mx-auto">
         <div className="mb-[34px]">
           <h2 className="text-[25] font-normal mb-[73px]">Contact</h2>
-          <p className="text-[15px] mb-[30px]">
+          <p className="text-[15px] mb-[30px] max-w-[703px]">
             I'm currently looking to join a cross-functional team that values
             improving people's lives through accessible design. or have a
             project in mind? Let's connect
