@@ -11,10 +11,9 @@ const Home = () => {
     <>
       <HomeContainer>
         <HomeWrapper className="max-w-[1162px] mx-auto">
-          {/* <Keyvisual />
-          <Experience /> */}
-          {/* <CanvasAnimation /> */}
-          <BoxAnimation/>
+          <Keyvisual />
+          <Experience />
+          <BoxAnimation />
         </HomeWrapper>
       </HomeContainer>
     </>
