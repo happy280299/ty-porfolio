@@ -19,25 +19,14 @@ const Header: React.FC = () => {
               />
             </Link>
           </HeaderLogo>
-
-          {/* Navigation Links */}
           <div className="flex space-x-8 gap-[164px]">
-            <a
-              href="#"
-              className="hover:text-gray-400 transition duration-300 text-xl"
-            >
+            <a href="#" className="text-xl link-navigation">
               Home
             </a>
-            <a
-              href="#"
-              className="hover:text-gray-400 transition duration-300 text-"
-            >
+            <a href="#" className="text-xl link-navigation">
               About
             </a>
-            <a
-              href="#"
-              className="hover:text-gray-400 transition duration-300 text-"
-            >
+            <a href="#" className="text-xl link-navigation">
               Showcase
             </a>
           </div>

@@ -43,7 +43,10 @@ const Experience = () => {
         <ul className="list-experience grid grid-cols-1 md:grid-cols-2 gap-8 mb-[160px] pl-[0]">
           {listExperience.map((item, index) => (
             <li key={index}>
-              <div className="bg-gradient-to-br p-9 rounded-2xl shadow-lg flex items-center gap-5">
+              <Link
+                to={item.link}
+                className="bg-gradient-to-br p-9 rounded-2xl shadow-lg flex items-center gap-5"
+              >
                 <img
                   src={item.image}
                   alt={item.title}
@@ -58,9 +61,9 @@ const Experience = () => {
                   <p className="text-description text-gray-300 text-[12px] mb-[14px]">
                     {item.description}
                   </p>
-                  <Link to={item.link}>LEARN MORE</Link>
+                  <p className="button">LEARN MORE</p>
                 </div>
-              </div>
+              </Link>
             </li>
           ))}
         </ul>

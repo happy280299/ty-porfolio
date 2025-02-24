@@ -27,6 +27,10 @@ export const ExperienceContainer = styled.div`
       border-radius: 15px;
       background: #2c1250;
       box-shadow: 0px -4px 0px 0px #4f228d;
+      transition: all 0.26s ease;
+      &:hover {
+        box-shadow: 0px 4px 0px 0px #4f228d;
+      }
       &:nth-child(1) {
         background: linear-gradient(
           110deg,
@@ -68,7 +72,7 @@ export const ExperienceContainer = styled.div`
         );
       }
     }
-    a {
+    .button {
       background-color: #2c1250;
       border: solid 1px #693b93;
       border-radius: 10px;
@@ -76,6 +80,7 @@ export const ExperienceContainer = styled.div`
       font-family: Poppins;
       text-align: center;
       padding: 6px 17px;
+      display: inline-block;
     }
   }
 `;
