@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { KeyvisualContainer, KeyvisualWrapper } from "./styled";
+import { ContextProviderWrapper } from "../../../Context";
 
 const Keyvisual = () => {
+  const { isDesktop } = useContext(ContextProviderWrapper)!;
+
   return (
-    <KeyvisualContainer className="pt-[132px]">
+    <KeyvisualContainer className="md:pt-[132px]">
       <KeyvisualWrapper className="max-w-[1162px]">
-        <div className="mx-auto flex">
+        <div className="mx-auto md:flex">
+          {!isDesktop && (
+            <p className="text-name mb-[0] text-center	">
+              Hello! I Am <span>Ibrahim Memon</span>
+            </p>
+          )}
           <div className="keyvisual-left">
             <img
               src="/assets/images/keyvisual/keyvisual_img_01.png"
@@ -16,9 +24,11 @@ const Keyvisual = () => {
             />
           </div>
           <div className="keyvisual-right max-w-[385px]">
-            <p className="text-name mb-[87px]">
-              Hello! I Am <span>Ibrahim Memon</span>
-            </p>
+            {isDesktop && (
+              <p className="text-name mb-[87px]">
+                Hello! I Am <span>Ibrahim Memon</span>
+              </p>
+            )}
             <p className="text-[17px] underline mb-[0]">A Designer who</p>
             <h1 className="title-keyvisual text-[50px] mb-[3px] leading-[126.664%]">
               Judges a book by its <span>cover</span>...

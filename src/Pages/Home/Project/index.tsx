@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ProjectContainer, ProjectList, ProjectWrapper } from "./styled";
+import { ContextProviderWrapper } from "../../../Context";
 
 const Project = () => {
+  const { isDesktop } = useContext(ContextProviderWrapper)!;
   return (
     <ProjectContainer>
       <ProjectWrapper>
@@ -14,19 +16,21 @@ const Project = () => {
                   <span className="title-bug">{items.titleBig}</span>
                 </h2>
                 <p className="content-description">{items.des}</p>
-                <ul className="list-pointer">
-                  {items.subList.map((item: any, index) => (
-                    <li key={index}>
-                      <img
-                        src={item.icon}
-                        width={31}
-                        height={31}
-                        loading="lazy"
-                        alt="Icon"
-                      />
-                    </li>
-                  ))}
-                </ul>
+                {isDesktop && (
+                  <ul className="list-pointer">
+                    {items.subList.map((item: any, index) => (
+                      <li key={index}>
+                        <img
+                          src={item.icon}
+                          width={31}
+                          height={31}
+                          loading="lazy"
+                          alt="Icon"
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
               <div className="content-right">
                 <img
@@ -36,6 +40,21 @@ const Project = () => {
                   loading="lazy"
                   alt="Banner"
                 />
+                {!isDesktop && (
+                  <ul className="list-pointer">
+                    {items.subList.map((item: any, index) => (
+                      <li key={index}>
+                        <img
+                          src={item.icon}
+                          width={31}
+                          height={31}
+                          loading="lazy"
+                          alt="Icon"
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </li>
           ))}

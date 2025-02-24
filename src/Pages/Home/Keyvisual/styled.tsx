@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const KeyvisualContainer = styled.div``;
+export const KeyvisualContainer = styled.div`
+  @media screen and (max-width: 767.98px) {
+    padding-top: 50px;
+  }
+`;
 export const KeyvisualWrapper = styled.div`
   .keyvisual-left {
     position: relative;
@@ -93,6 +97,42 @@ export const KeyvisualWrapper = styled.div`
           no-repeat;
         width: 20px;
         height: 21px;
+      }
+    }
+  }
+  @media screen and (max-width: 767.98px) {
+    padding: 0 20px;
+    .keyvisual-left {
+      max-width: unset;
+    }
+    .keyvisual-right {
+      margin-left: 0;
+    }
+    .text-small {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .text-name {
+      &:before {
+        display: none;
+      }
+    }
+    .title-keyvisual {
+      font-size: 40px;
+      span {
+        font-size: 40px;
+        &:before {
+          width: 139px;
+          height: 51px;
+          top: 50%;
+          left: 50%;
+        }
+      }
+    }
+    .block-position {
+      margin-bottom: 20px;
+      h2 {
+        font-size: 40px;
       }
     }
   }

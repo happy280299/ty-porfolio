@@ -6,6 +6,9 @@ export const ProjectContainer = styled.div`
 export const ProjectWrapper = styled.div`
   max-width: 1167px;
   margin: 0 auto;
+  @media screen and (max-width: 767.98px) {
+    padding: 0 20px;
+  }
 `;
 export const ProjectList = styled.ul`
   padding-left: 0;
@@ -113,5 +116,43 @@ export const ProjectList = styled.ul`
     align-items: center;
     gap: 17px;
     margin-bottom: 0;
+    padding-left: 0;
+  }
+  @media screen and (max-width: 767.98px) {
+    .item-list {
+      flex-direction: column;
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+      &:nth-child(2n) {
+        .content-left {
+          order: 1;
+          .content-description {
+            margin-left: 0;
+          }
+        }
+        .content-right {
+          order: 2;
+        }
+      }
+      .content-right {
+        flex-direction: column;
+      }
+      .list-pointer {
+        margin-top: 20px;
+      }
+    }
+    .content-right {
+      height: 280px;
+      margin-bottom: 20px;
+      img {
+        width: 95%;
+        margin-left: auto;
+      }
+    }
+    .content-description {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
   }
 `;

@@ -83,4 +83,20 @@ export const ExperienceContainer = styled.div`
       display: inline-block;
     }
   }
+  @media screen and (max-width: 767.98px) {
+    padding-top: 100px;
+    .wrapper {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .item-link {
+      padding: 1rem 0.5rem;
+      img {
+        width: 30%;
+      }
+    }
+    .title {
+      font-size: 20px;
+    }
+  }
 `;

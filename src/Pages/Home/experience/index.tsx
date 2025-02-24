@@ -45,7 +45,7 @@ const Experience = () => {
             <li key={index}>
               <Link
                 to={item.link}
-                className="bg-gradient-to-br p-9 rounded-2xl shadow-lg flex items-center gap-5"
+                className="bg-gradient-to-br md:p-9 rounded-2xl shadow-lg flex items-center gap-5 item-link"
               >
                 <img
                   src={item.image}
@@ -55,7 +55,7 @@ const Experience = () => {
                   loading="lazy"
                 />
                 <div>
-                  <h3 className="text-white text-[26px] font-[600] mb-[5px]">
+                  <h3 className="title text-white text-[26px] font-[600] mb-[5px]">
                     {item.title}
                   </h3>
                   <p className="text-description text-gray-300 text-[12px] mb-[14px]">
