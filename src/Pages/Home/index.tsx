@@ -1,23 +1,23 @@
 import React from "react";
-import Header from "../../Component/Header";
+import Header from "../../Components/Header";
 import { HomeContainer, HomeWrapper } from "./styled";
 import Keyvisual from "./Keyvisual";
 import Experience from "./experience";
-import CanvasAnimation from "../../Component/CanvasTech";
-import BoxAnimation from "../../Component/BoxAnimation/BoxAnimation";
+import CanvasAnimation from "../../Components/CanvasTech";
+import BoxAnimation from "../../Components/BoxAnimation/BoxAnimation";
 import Project from "./Project";
 
 const Home = () => {
   return (
     <>
-      <HomeContainer>
+      {/* <HomeContainer>
         <HomeWrapper className="max-w-[1162px] mx-auto">
           <Keyvisual />
           <Experience />
           <BoxAnimation />
           <Project />
         </HomeWrapper>
-      </HomeContainer>
+      </HomeContainer> */}
     </>
   );
 };

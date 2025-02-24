@@ -2,7 +2,7 @@ import React from "react";
 import { ExperienceContainer } from "./styled";
 import { ListExperienceProps } from "../../../types/experience";
 import { Link } from "react-router-dom";
-import CanvasAnimation from "../../../Component/CanvasTech";
+import CanvasAnimation from "../../../Components/CanvasTech";
 
 const listExperience: ListExperienceProps[] = [
   {
