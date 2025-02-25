@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { ExperienceContainer } from "./styled";
 import { ListExperienceProps } from "../../../types/experience";
 import { Link } from "react-router-dom";
-import CanvasAnimation from "../../../Components/CanvasTech";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const listExperience: ListExperienceProps[] = [
   {
@@ -34,10 +35,31 @@ const listExperience: ListExperienceProps[] = [
     link: "LEARN MORE",
   },
 ];
+gsap.registerPlugin(ScrollTrigger);
 
 const Experience = () => {
+  const experienceRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      experienceRef.current,
+      { opacity: 0, x: 200 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: experienceRef.current,
+          start: "top center",
+          end: "+=200",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }, []);
+
   return (
-    <ExperienceContainer className="pt-[170px]">
+    <ExperienceContainer className="pt-[170px]" ref={experienceRef}>
       <div className="wrapper">
         <h2 className="text-[40px] mb-[44px] font-normal">Work Experience</h2>
         <ul className="list-experience grid grid-cols-1 md:grid-cols-2 gap-8 mb-[160px] pl-[0]">

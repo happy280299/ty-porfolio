@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const KeyvisualContainer = styled.div`
+  height: 100vh;
   @media screen and (max-width: 767.98px) {
     padding-top: 50px;
   }
