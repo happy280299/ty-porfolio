@@ -37,6 +37,21 @@ export const ContainerMain = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 5;
+  .LineAnimtion{
+    /* animation: line1 3s linear ; */
+    stroke-dashoffset: 0;
+    transition: all 1.8s linear;
+  }
+  .opacityAnimtion{
+    opacity: 1;
+    transition: all 0.6s linear;
+    transition-delay: 1.2s;
+  }
+  .opacityAnimtion1{
+    opacity: 1;
+    transition: all 1.2s linear;
+    transition-delay: 1.8s;
+  }
 `;
 export const Orbit1 = styled.div`
   width: 80%;

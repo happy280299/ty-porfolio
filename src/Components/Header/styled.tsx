@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 11;
+  z-index: 110;
 `;
 export const HeaderWrapper = styled.div`
   nav {

@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+
 const Anime = () => {
   return (
     <animate
@@ -5,7 +7,7 @@ const Anime = () => {
       values="-300; 0; 0"
       keyTimes="0; 0.5; 1"
       dur="3s"
-      repeatCount="indefinite"
+      // repeatCount="indefinite"
     />
   );
 };
@@ -16,21 +18,43 @@ const IconAnime1 = () => {
       values="0; 0; 1"
       keyTimes="0; 0.4;1"
       dur="3s"
-      repeatCount="indefinite"
+      // repeatCount="indefinite"
     />
   );
-};const IconAnime2 = () => {
+};
+const IconAnime2 = () => {
   return (
     <animate
       attributeName="opacity"
       values="0; 0; 1"
       keyTimes="0; 0.5;1"
       dur="3s"
-      repeatCount="indefinite"
+      // repeatCount="indefinite"
     />
   );
 };
 const RootSvg = () => {
+  const ref = useRef<any>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
   return (
     <>
       <svg
@@ -40,54 +64,59 @@ const RootSvg = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
+        ref={ref}
       >
         <path
           d="M403 85.5C359.333 133 273.8 255 281 363"
           stroke="url(#paint0_linear_2_2)"
           stroke-dasharray="300"
-          stroke-dashoffset="300"
-        >
-          <Anime />
-        </path>
+          stroke-dashoffset="-300"
+          className={`${isVisible ? "LineAnimtion" : ""}`}
+        ></path>
         <path
           d="M341.5 102.5C297.833 150 264.8 264.5 272 372.5"
           stroke="url(#paint1_linear_2_2)"
           stroke-dasharray="300"
-          stroke-dashoffset="300"
+          stroke-dashoffset="-300"
+          className={`${isVisible ? "LineAnimtion" : ""}`}
         >
-          <Anime />
+          {/* <Anime /> */}
         </path>
         <path
           d="M290 101C271 167 255.5 338.5 255.5 392.5"
           stroke="url(#paint2_linear_2_2)"
           stroke-dasharray="300"
-          stroke-dashoffset="300"
+          stroke-dashoffset="-300"
+          className={`${isVisible ? "LineAnimtion" : ""}`}
         >
-          <Anime />
+          {/* <Anime /> */}
         </path>
         <path
           d="M122.5 95C166.167 142.5 247.2 287.5 240 395.5"
           stroke="url(#paint3_linear_2_2)"
           stroke-dasharray="300"
-          stroke-dashoffset="300"
+          stroke-dashoffset="-300"
+          className={`${isVisible ? "LineAnimtion" : ""}`}
         >
-          <Anime />
+          {/* <Anime /> */}
         </path>
         <path
           d="M184 95C227.667 142.5 256.2 297 249 405"
           stroke="url(#paint4_linear_2_2)"
           stroke-dasharray="300"
-          stroke-dashoffset="300"
+          stroke-dashoffset="-300"
+          className={`${isVisible ? "LineAnimtion" : ""}`}
         >
-          <Anime />
+          {/* <Anime /> */}
         </path>
         <path
           d="M233 98C252.253 170.332 254 351.819 254 411"
           stroke="url(#paint5_linear_2_2)"
           stroke-dasharray="300"
-          stroke-dashoffset="300"
+          stroke-dashoffset="-300"
+          className={`${isVisible ? "LineAnimtion" : ""}`}
         >
-          <Anime />
+          {/* <Anime /> */}
         </path>
         <ellipse
           cx="271"
@@ -96,44 +125,135 @@ const RootSvg = () => {
           ry="165"
           fill="url(#paint6_radial_2_2)"
         />
-        <circle cx="96" cy="22" r="22" fill="#251C31">
-          <IconAnime2/>
+        <circle
+          cx="96"
+          cy="22"
+          r="22"
+          fill="#251C31"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion1" : ""}`}
+        >
+          {/* <IconAnime2 /> */}
         </circle>
-        <circle cx="151" cy="22" r="22" fill="#251C31" >
-          <IconAnime2/>
+        <circle
+          cx="151"
+          cy="22"
+          r="22"
+          fill="#251C31"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion1" : ""}`}
+        >
+          {/* <IconAnime2 /> */}
         </circle>
-        <circle cx="206" cy="22" r="22" fill="#251C31" >
-          <IconAnime2/>
+        <circle
+          cx="206"
+          cy="22"
+          r="22"
+          fill="#251C31"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion1" : ""}`}
+        >
+          {/* <IconAnime2 /> */}
         </circle>
-        <circle cx="264" cy="22" r="22" fill="#251C31" >
-          <IconAnime2/>
+        <circle
+          cx="264"
+          cy="22"
+          r="22"
+          fill="#251C31"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion1" : ""}`}
+        >
+          {/* <IconAnime2 /> */}
         </circle>
-        <circle cx="124" cy="83" r="22" fill="#251C31" >
-          <IconAnime1/>
+        <circle
+          cx="124"
+          cy="83"
+          r="22"
+          fill="#251C31"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion" : ""}`}
+        >
+          {/* <IconAnime1/> */}
         </circle>
-        <circle cx="371" cy="22" r="22" fill="#251C31" >
-          <IconAnime2/>
+        <circle
+          cx="371"
+          cy="22"
+          r="22"
+          fill="#251C31"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion1" : ""}`}
+        >
+          {/* <IconAnime2 /> */}
         </circle>
-        <circle cx="426" cy="22" r="22" fill="#251C31" >
-          <IconAnime2/>
+        <circle
+          cx="426"
+          cy="22"
+          r="22"
+          fill="#251C31"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion1" : ""}`}
+        >
+          {/* <IconAnime2 /> */}
         </circle>
-        <circle cx="316" cy="22" r="22" fill="#251C31" >
-          <IconAnime2/>
+        <circle
+          cx="316"
+          cy="22"
+          r="22"
+          fill="#251C31"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion1" : ""}`}
+        >
+          {/* <IconAnime2 /> */}
         </circle>
-        <circle cx="236" cy="83" r="22" fill="#251C31" >
-          <IconAnime1/>
+        <circle
+          cx="236"
+          cy="83"
+          r="22"
+          fill="#251C31"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion" : ""}`}
+        >
+          {/* <IconAnime1/> */}
         </circle>
-        <circle cx="291" cy="83" r="22" fill="#251C31" >
-          <IconAnime1/>
+        <circle
+          cx="291"
+          cy="83"
+          r="22"
+          fill="#251C31"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion" : ""}`}
+        >
+          {/* <IconAnime1/> */}
         </circle>
-        <circle cx="350" cy="83" r="22" fill="#251C31" >
-          <IconAnime1/>
+        <circle
+          cx="350"
+          cy="83"
+          r="22"
+          fill="#251C31"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion" : ""}`}
+        >
+          {/* <IconAnime1/> */}
         </circle>
-        <circle cx="405" cy="83" r="22" fill="#251C31" >
-          <IconAnime1/>
+        <circle
+          cx="405"
+          cy="83"
+          r="22"
+          fill="#251C31"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion" : ""}`}
+        >
+          {/* <IconAnime1/> */}
         </circle>
-        <circle cx="184" cy="83" r="22" fill="#251C31" >
-          <IconAnime1/>
+        <circle
+          cx="184"
+          cy="83"
+          r="22"
+          fill="#251C31"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion" : ""}`}
+        >
+          {/* <IconAnime1/> */}
         </circle>
         <g style={{ mixBlendMode: "lighten" }}>
           <rect
@@ -141,36 +261,111 @@ const RootSvg = () => {
             y="75"
             width="33"
             height="15"
-            fill="url(#pattern0_2_2)">
-            <IconAnime1/>
+            fill="url(#pattern0_2_2)"
+            opacity={0}
+            className={`${isVisible ? "opacityAnimtion" : ""}`}
+          >
+            {/* <IconAnime1/> */}
           </rect>
         </g>
-        <rect x="86" y="8" width="21" height="28" fill="url(#pattern1_2_2)" >
-          <IconAnime2/>
+        <rect
+          x="86"
+          y="8"
+          width="21"
+          height="28"
+          fill="url(#pattern1_2_2)"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion1" : ""}`}
+        >
+          {/* <IconAnime2 /> */}
         </rect>
-        <rect x="135" y="8" width="32" height="28" fill="url(#pattern2_2_2)" >
-          <IconAnime2/>
+        <rect
+          x="135"
+          y="8"
+          width="32"
+          height="28"
+          fill="url(#pattern2_2_2)"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion1" : ""}`}
+        >
+          {/* <IconAnime2 /> */}
         </rect>
-        <rect x="190" y="7" width="32" height="31" fill="url(#pattern3_2_2)" >
-          <IconAnime2/>
+        <rect
+          x="190"
+          y="7"
+          width="32"
+          height="31"
+          fill="url(#pattern3_2_2)"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion1" : ""}`}
+        >
+          {/* <IconAnime2 /> */}
         </rect>
-        <rect x="111" y="71" width="26" height="25" fill="url(#pattern4_2_2)" >
-          <IconAnime1/>
+        <rect
+          x="111"
+          y="71"
+          width="26"
+          height="25"
+          fill="url(#pattern4_2_2)"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion" : ""}`}
+        >
+          {/* <IconAnime1/> */}
         </rect>
-        <rect x="358" y="10" width="26" height="25" fill="url(#pattern5_2_2)" >
-          <IconAnime2></IconAnime2>
+        <rect
+          x="358"
+          y="10"
+          width="26"
+          height="25"
+          fill="url(#pattern5_2_2)"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion1" : ""}`}
+        >
+          {/* <IconAnime2 /> */}
         </rect>
-        <rect x="413" y="10" width="26" height="25" fill="url(#pattern6_2_2)" >
-          <IconAnime2/>
+        <rect
+          x="413"
+          y="10"
+          width="26"
+          height="25"
+          fill="url(#pattern6_2_2)"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion1" : ""}`}
+        >
+          {/* <IconAnime2 /> */}
         </rect>
-        <rect x="303" y="8" width="26" height="25" fill="url(#pattern7_2_2)" >
-          <IconAnime2/>
+        <rect
+          x="303"
+          y="8"
+          width="26"
+          height="25"
+          fill="url(#pattern7_2_2)"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion1" : ""}`}
+        >
+          {/* <IconAnime2 /> */}
         </rect>
-        <rect x="223" y="70" width="26" height="26" fill="url(#pattern8_2_2)" >
-          <IconAnime1/>
+        <rect
+          x="223"
+          y="70"
+          width="26"
+          height="26"
+          fill="url(#pattern8_2_2)"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion" : ""}`}
+        >
+          {/* <IconAnime1/> */}
         </rect>
-        <rect x="278" y="71" width="26" height="25" fill="url(#pattern9_2_2)" >
-          <IconAnime1/>
+        <rect
+          x="278"
+          y="71"
+          width="26"
+          height="25"
+          fill="url(#pattern9_2_2)"
+          opacity={0}
+          className={`${isVisible ? "opacityAnimtion" : ""}`}
+        >
+          {/* <IconAnime1/> */}
         </rect>
         <g style={{ mixBlendMode: "lighten" }}>
           <rect
@@ -178,8 +373,11 @@ const RootSvg = () => {
             y="78"
             width="39"
             height="11"
-            fill="url(#pattern10_2_2)">
-            <IconAnime1/>
+            fill="url(#pattern10_2_2)"
+            opacity={0}
+            className={`${isVisible ? "opacityAnimtion" : ""}`}
+          >
+            {/* <IconAnime1/> */}
           </rect>
         </g>
         <g style={{ mixBlendMode: "lighten" }}>
@@ -188,8 +386,11 @@ const RootSvg = () => {
             y="78"
             width="37"
             height="9"
-            fill="url(#pattern11_2_2)">
-            <IconAnime1/>
+            fill="url(#pattern11_2_2)"
+            opacity={0}
+            className={`${isVisible ? "opacityAnimtion" : ""}`}
+          >
+            {/* <IconAnime1/> */}
           </rect>
         </g>
         <g style={{ mixBlendMode: "lighten" }}>
@@ -198,8 +399,11 @@ const RootSvg = () => {
             y="12"
             width="32"
             height="21"
-            fill="url(#pattern12_2_2)">
-            <IconAnime2/>
+            fill="url(#pattern12_2_2)"
+            opacity={0}
+            className={`${isVisible ? "opacityAnimtion1" : ""}`}
+          >
+            {/* <IconAnime2 /> */}
           </rect>
         </g>
         <circle cx="259" cy="441" r="90" fill="url(#paint7_linear_2_2)" />

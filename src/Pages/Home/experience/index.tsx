@@ -39,7 +39,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Experience = () => {
   const experienceRef = useRef(null);
-
   useEffect(() => {
     gsap.fromTo(
       experienceRef.current,
