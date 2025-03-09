@@ -36,21 +36,21 @@ export const ContainerMain = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 5;
-  .LineAnimtion{
+  z-index: 20;
+  .LineAnimtion {
     /* animation: line1 3s linear ; */
     stroke-dashoffset: 0;
-    transition: all 1.8s linear;
+    transition: all 1s linear;
   }
-  .opacityAnimtion{
+  .opacityAnimtion {
     opacity: 1;
     transition: all 0.6s linear;
     transition-delay: 1.2s;
   }
-  .opacityAnimtion1{
+  .opacityAnimtion1 {
     opacity: 1;
     transition: all 1.2s linear;
-    transition-delay: 1.8s;
+    transition-delay: 1.4s;
   }
 `;
 export const Orbit1 = styled.div`
