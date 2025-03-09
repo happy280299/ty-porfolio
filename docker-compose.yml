@@ -2,6 +2,6 @@ version: "3.8"
 services:
   frontend:
     build: ./
-    container_name: ty_porlio
+    container_name: ty_porfolio
     ports:
       - "3002:3002"
