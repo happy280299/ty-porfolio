@@ -1,64 +1,124 @@
 import { useEffect, useState } from "react";
 import "./satellite.css";
+import { Orbit1, Orbit2, Orbit3 } from "./AnimationStyle";
 const Satellite = (props: any) => {
-  const [styleSlider, setStyleSlider] = useState({});
-  const [color, setColor] = useState({});
-  useEffect(() => {
-    switch (props.index) {
-      case "1":
-        return () => {
-          setStyleSlider({
-            animationDelay: "0s",
-            boxShadow: "0px 0px 50px 0px gold",
-          });
-          setColor({
-            background:
-              "radial-gradient(at 50% 50%, white, gold, rgb(240,230,140), rgb(184,134,11), rgb(184,134,11))",
-          });
-        };
-        break;
-      case "2":
-        return () => {
-          setStyleSlider({
-            animationDelay: "-2s",
-            boxShadow: "0px 0px 50px 0px rgb(0,191,255)",
-          });
-          setColor({
-            background:
-              "radial-gradient(at 50% 50%, white, rgb(0,191,255), rgb(0,191,255), rgb(135,206,250), rgb(135,206,250))",
-          });
-        };
-        break;
-      case "3":
-        return () => {
-          setStyleSlider({
-            animationDelay: "-4s",
-            boxShadow: "0px 0px 50px 0px red",
-          });
-          setColor({
-            background:
-              "radial-gradient(at 30% 70%, white, red, rgb(255,69,0), rgb(250,128,114), rgb(250,128,114))",
-          });
-        };
-        break;
+  const handleShowImg = (index: any) => {
+    if (index === "1") {
+      return (
+        <>
+          <Orbit1 style={{animationDelay:"-5s"}} >
+            <div className="ball">
+              <div className="layer clip">
+                <div className="shade">
+                  <img src="/assets/images/Orbit/AiLogo.svg" />
+                </div>
+              </div>
+            </div>
+          </Orbit1>
+          <Orbit1>
+            <div className="ball">
+              <div className="layer clip">
+                <div className="shade">
+                  <img src="/assets/images/Orbit/codeLogo.svg" />
+                </div>
+              </div>
+            </div>
+          </Orbit1>
+        </>
+      );
+    } else if (index === "2") {
+      return (
+        <>
+          <Orbit2 style={{animationDelay:"-2.5s"}} >
+            <div className="ball">
+              <div className="layer clip">
+                <div className="shade">
+                  <img src="/assets/images/Orbit/Css.svg" />
+                </div>
+              </div>
+            </div>
+          </Orbit2>
+          <Orbit2 style={{animationDelay:"-5s"}}>
+            <div className="ball">
+              <div className="layer clip">
+                <div className="shade">
+                  <img src="/assets/images/Orbit/figmaLogo.svg" />
+                </div>
+              </div>
+            </div>
+          </Orbit2>
+          <Orbit2 style={{animationDelay:"-7.5s"}}>
+            <div className="ball">
+              <div className="layer clip">
+                <div className="shade">
+                  <img src="/assets/images/Orbit/GG.svg" />
+                </div>
+              </div>
+            </div>
+          </Orbit2>
+          <Orbit2>
+            <div className="ball">
+              <div className="layer clip">
+                <div className="shade">
+                  <img src="/assets/images/Orbit/jsLogo.svg" />
+                </div>
+              </div>
+            </div>
+          </Orbit2>
+        </>
+      );
+    }else{
+      return (
+        <>
+          <Orbit3 style={{animationDelay:"-2s"}} >
+            <div className="ball">
+              <div className="layer clip">
+                <div className="shade">
+                  <img src="/assets/images/Orbit/JsLogo2.svg" />
+                </div>
+              </div>
+            </div>
+          </Orbit3>
+          <Orbit3 style={{animationDelay:"-4s"}} >
+            <div className="ball">
+              <div className="layer clip">
+                <div className="shade">
+                  <img src="/assets/images/Orbit/Liked.svg" />
+                </div>
+              </div>
+            </div>
+          </Orbit3>
+          <Orbit3 style={{animationDelay:"-6s"}} >
+            <div className="ball">
+              <div className="layer clip">
+                <div className="shade">
+                  <img src="/assets/images/Orbit/reactLogo.svg" />
+                </div>
+              </div>
+            </div>
+          </Orbit3>
+          <Orbit3 style={{animationDelay:"-8s"}} >
+            <div className="ball">
+              <div className="layer clip">
+                <div className="shade">
+                  <img src="/assets/images/Orbit/tw.svg" />
+                </div>
+              </div>
+            </div>
+          </Orbit3>
+          <Orbit3 style={{animationDelay:"-10s"}} >
+            <div className="ball">
+              <div className="layer clip">
+                <div className="shade">
+                  <img src="/assets/images/Orbit/xdLogo.svg" />
+                </div>
+              </div>
+            </div>
+          </Orbit3>
+        </>
+      );
     }
-  }, []);
-  return (
-    <>
-      <div className="ball">
-        <div className="layer moving">
-          <div className="layer gridplane xline"></div>
-          <div className="layer gridplane xline2"></div>
-          <div className="layer gridplane yline"></div>
-          <div className="layer gridplane zline"></div>
-          <div className="layer gridplane laser"></div>
-          <div className="layer gridplane laser2"></div>
-        </div>
-        <div className="layer clip" style={styleSlider}>
-          <div className="shade" style={color}></div>
-        </div>
-      </div>
-    </>
-  );
+  };
+  return <>{handleShowImg(props.index)}</>;
 };
 export default Satellite;

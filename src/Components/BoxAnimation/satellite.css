@@ -54,21 +54,21 @@
   }
   
   .laser {
-    background-color: rgba(0, 0, 0, 0.05);
+    /* background-color: rgba(0, 0, 0, 0.05); */
     transform: translateX(-27.7128%) translateY(-27.7128%) rotateY(90deg)
       translateX(-27.7128%) rotateY(-135deg) rotateX(45deg) scale(0.3)
       translateY(-25%);
   }
   
   .laser2 {
-    background-color: rgba(0, 0, 0, 0.05);
+    /* background-color: rgba(0, 0, 0, 0.05); */
     transform: translateX(-27.0128%) translateY(-27.0128%) rotateY(90deg)
       translateX(-27.0128%) rotateY(-135deg) rotateX(45deg) scale(0.2)
       translateY(-35%);
   }
   
   .clip {
-    border-radius: 50%;
+    /* border-radius: 50%; */
     overflow: hidden;
     transform: translateZ(0vmin);
     animation: UnRotateHome 10s linear infinite;
@@ -137,12 +137,18 @@
     }
   }
   .shade {
-    position: relative;
-    top: -150%;
-    left: -150%;
-    width: 400%;
-    height: 400%;
-    background: radial-gradient(at 50% 50%, white, black, grey, black, black);
+    /* position: relative; */
+    top: -0%;
+    left: -0%;
+    width: 100%;
+    height: 100%;
+    /* background: radial-gradient(at 50% 50%, white, black, grey, black, black); */
     animation: highlightanim 5s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  
+  .shade img{
+    width: 100%;
+    height: 100%;
+  }
