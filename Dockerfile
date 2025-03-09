@@ -8,6 +8,6 @@ RUN yarn build
 FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 COPY --from=builder /app/build .
-RUN sed -i 's/listen       80;/listen       3001;/g' /etc/nginx/conf.d/default.conf
-EXPOSE 3001
+RUN sed -i 's/listen       80;/listen       3002;/g' /etc/nginx/conf.d/default.conf
+EXPOSE 3002
 CMD ["nginx", "-g", "daemon off;"]
