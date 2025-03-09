@@ -33,7 +33,7 @@ const Satellite = (props: any) => {
             <div className="ball">
               <div className="layer clip">
                 <div className="shade">
-                  <img src="/assets/images/Orbit/Css.svg" />
+                  <img src="/assets/images/Orbit/Css.svg"/>
                 </div>
               </div>
             </div>
@@ -42,7 +42,7 @@ const Satellite = (props: any) => {
             <div className="ball">
               <div className="layer clip">
                 <div className="shade">
-                  <img src="/assets/images/Orbit/figmaLogo.svg" />
+                  <img src="/assets/images/Orbit/figmaLogo.svg"/>
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@ const Satellite = (props: any) => {
             <div className="ball">
               <div className="layer clip">
                 <div className="shade">
-                  <img src="/assets/images/Orbit/GG.svg" />
+                  <img src="/assets/images/Orbit/GG.svg"/>
                 </div>
               </div>
             </div>
@@ -60,7 +60,7 @@ const Satellite = (props: any) => {
             <div className="ball">
               <div className="layer clip">
                 <div className="shade">
-                  <img src="/assets/images/Orbit/jsLogo.svg" />
+                  <img src="/assets/images/Orbit/jsLogo.svg"/>
                 </div>
               </div>
             </div>
@@ -74,7 +74,7 @@ const Satellite = (props: any) => {
             <div className="ball">
               <div className="layer clip">
                 <div className="shade">
-                  <img src="/assets/images/Orbit/JsLogo2.svg" />
+                  <img src="/assets/images/Orbit/JsLogo2.svg"/>
                 </div>
               </div>
             </div>
@@ -83,7 +83,7 @@ const Satellite = (props: any) => {
             <div className="ball">
               <div className="layer clip">
                 <div className="shade">
-                  <img src="/assets/images/Orbit/Liked.svg" />
+                  <img src="/assets/images/Orbit/Liked.svg"/>
                 </div>
               </div>
             </div>
@@ -92,7 +92,7 @@ const Satellite = (props: any) => {
             <div className="ball">
               <div className="layer clip">
                 <div className="shade">
-                  <img src="/assets/images/Orbit/reactLogo.svg" />
+                  <img src="/assets/images/Orbit/reactLogo.svg"/>
                 </div>
               </div>
             </div>
@@ -101,7 +101,7 @@ const Satellite = (props: any) => {
             <div className="ball">
               <div className="layer clip">
                 <div className="shade">
-                  <img src="/assets/images/Orbit/tw.svg" />
+                  <img src="/assets/images/Orbit/tw.svg"/>
                 </div>
               </div>
             </div>
