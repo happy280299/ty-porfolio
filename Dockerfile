@@ -2,7 +2,7 @@
 FROM node:18-alpine AS builder
 WORKDIR /app
 
-# Copy dependencies & install
+# Copy dependencies & cài đặt
 COPY package.json yarn.lock ./
 RUN yarn install
 
@@ -10,5 +10,6 @@ RUN yarn install
 COPY . .
 RUN yarn build
 
-# Xuất thư mục build ra ngoài container (tùy vào cấu hình docker-compose)
-CMD ["sh", "-c", "cp -r /app/build /output && echo 'Build copied to /output'"]
+# Chỉ định thư mục build sẽ được mount ra ngoài
+VOLUME ["/app/build"]
+CMD ["sleep", "3600"]
