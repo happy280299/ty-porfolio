@@ -1,12 +1,14 @@
+# Build stage
 FROM node:18-alpine AS builder
 WORKDIR /app
+
+# Copy dependencies & install
 COPY package.json yarn.lock ./
 RUN yarn install
+
+# Copy toàn bộ source code và build
 COPY . .
 RUN yarn build
 
-FROM nginx:alpine
-WORKDIR /usr/share/nginx/html
-COPY --from=builder /app/build .
-RUN sed -i 's/listen       80;/listen       3002;/g' /etc/nginx/conf.d/default.conf
-CMD ["nginx", "-g", "daemon off;"]
+# Xuất thư mục build ra ngoài container (tùy vào cấu hình docker-compose)
+CMD ["sh", "-c", "cp -r /app/build /output && echo 'Build copied to /output'"]
