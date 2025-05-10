@@ -51,6 +51,7 @@ export const ContainerMain = styled.div`
     opacity: 1;
     transition: all 1.2s linear;
     transition-delay: 1.4s;
+    will-change: opacity;
   }
 `;
 export const Orbit1 = styled.div`

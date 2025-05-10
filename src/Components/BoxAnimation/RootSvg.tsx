@@ -38,22 +38,17 @@ const RootSvg = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.5 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
+    const handleScroll = () => {
       if (ref.current) {
-        observer.unobserve(ref.current);
+        const rect = ref.current.getBoundingClientRect();
+        setIsVisible(rect.top < window.innerHeight && rect.bottom > 0);
       }
     };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Kiểm tra ngay khi tải trang
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
     <>
@@ -182,9 +177,7 @@ const RootSvg = () => {
           fill="#251C31"
           opacity={0}
           className={`${isVisible ? "opacityAnimtion1" : ""}`}
-        >
-          {/* <IconAnime2 /> */}
-        </circle>
+        ></circle>
         <circle
           cx="426"
           cy="22"
@@ -261,7 +254,8 @@ const RootSvg = () => {
             y="75"
             width="33"
             height="15"
-            fill="url(#pattern0_2_2)"
+            // fill="url(#pattern0_2_2)"
+            fill={isVisible ? "url(#pattern1_2_2)" : "none"}
             opacity={0}
             className={`${isVisible ? "opacityAnimtion" : ""}`}
           >
